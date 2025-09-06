@@ -40,8 +40,7 @@ pip install -r requirements.txt
 # Set up environment variables
 # Create a file named .env in the project root (auto_news/) with:
 # DEBUG=True
-# SECRET_KEY=changeme
-# NEWS_API_KEY=your_api_key_here
+# NEWS_API_KEY="Get the key from https://newsapi.org" 
 
 # Apply database migrations
 python manage.py migrate
@@ -52,37 +51,6 @@ python manage.py runserver
 python -m venv venv
 venv\Scripts\activate
 ```
-## Install Dependencies
-
-Auto News Fetcher & Dashboard
-Project Explanation
-
-A Django-based web app that:
-
-Fetches the latest news headlines from a news API.
-
-Stores them in a SQLite database (NewsArticle model).
-
-Displays them in a web dashboard.
-
-Allows fetching fresh news manually (button) or via a custom management command.
-
-How to Run
-cd auto_news
-
-# Set up environment variables
-# Create a file named .env inside auto_news/ with:
-# DEBUG=True
-# SECRET_KEY=changeme
-# NEWS_API_KEY=your_api_key_here
-
-# Apply migrations
-python manage.py migrate
-
-# Run the server
-python manage.py runserver
-
-
 ##Open in browser:
 
 Dashboard → http://127.0.0.1:8000/
@@ -95,4 +63,32 @@ Option 1 → Click "Fetch Latest News" in the dashboard UI.
 Option 2 → Run the custom command:
 
 python manage.py fetchnews
+
+---
+
+## 2. Flipkart Watch Scraper
+
+### 📌 Project Goal
+A Python script that:
+- Scrapes men’s watches under ₹2000 from Flipkart.  
+- Extracts watch **name, brand, and price**.  
+- Saves the results into a CSV file (`men_watches_under_2000.csv`).  
+
+---
+
+### ⚙️ Setup Instructions (Windows)
+
+```bash
+# Navigate to the scraper folder
+cd ../flipkart_scraper
+
+# Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate
+
+# Install dependencies
+pip install requests beautifulsoup4 lxml pandas
+
+# Run the script
+python scraper.py
 
